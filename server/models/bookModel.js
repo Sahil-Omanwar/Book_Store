@@ -24,6 +24,9 @@ const BookSchema=new mongoose.Schema({
     bookPdfUrl: {
         type: String,
         required: true // You can set this to true if the bookPdfUrl is mandatory
+    },price:{
+        type:Number,
+        default:70
     }
 
 })
