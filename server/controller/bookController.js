@@ -3,7 +3,7 @@ const Book = require('../models/bookModel.js'); // Import the Book model once
 
 const createBook = async (req, res) => {
     try {
-        const { name, author, description, genre, imageUrl, bookPdfUrl } = req.body;
+        const { name, author, description, genre, imageUrl, bookPdfUrl,price } = req.body;
         const response = await Book.create({ name, author, description, genre, imageUrl, bookPdfUrl });
         res.status(200).json({
             message: "Successfully uploaded Book",
@@ -77,6 +77,7 @@ const getAllBooks = async (req, res) => {
     }
 };
 
+
 const deleteBook = async (req, res) => {
     try {
         const id = req.params.id; // Use `id` instead of `name`
@@ -101,11 +102,52 @@ const deleteBook = async (req, res) => {
         console.error(err);
     }
 };
+/*const searchBooksByName = async (req, res) => {
+    try {
+        const { name } = req.params; // Get name from URL params
+        const books = await Book.find({ name: new RegExp(name, 'i') }); // Case-insensitive search
+
+        if (books.length === 0) {
+            return res.status(404).json({ message: 'No books found' });
+        }
+
+        res.status(200).json(books);
+    } catch (err) {
+        console.error('Error searching books by name:', err);
+        res.status(500).json({
+            message: 'Error searching books by name',
+            success: false
+        });
+    }
+}; */
+const searchBooksByName = async (req, res) => {
+    try {
+        const { name } = req.params; // Get name from URL params
+        const books = await Book.find({ name: new RegExp(name, 'i') }); // Case-insensitive search
+
+        if (books.length === 0) {
+            return res.status(404).json({ message: 'No books found' });
+        }
+
+        res.status(200).json(books);
+    } catch (err) {
+        console.error('Error searching books by name:', err);
+        res.status(500).json({
+            message: 'Error searching books by name',
+            success: false
+        });
+    }
+};
+
+
+
+
 
 module.exports = {
     createBook,
     deleteBook,
     getBook,
     updateBook,
-    getAllBooks
+    getAllBooks,
+    searchBooksByName 
 };
