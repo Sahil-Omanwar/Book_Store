@@ -6,6 +6,8 @@ import Blog from './components/Blog';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SingleBook from './pages/SingleBook';
+import Sell from './pages/Sell.jsx';
+import SearchByName from './components/SearchByName.jsx';
 
 function App() {
   return (
@@ -18,6 +20,11 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/book/:id" element={<SingleBook />} />
+        <Route path='/admin/dashboard' element={<Sell></Sell>}></Route>
+        <Route path="/book/search/:name" element={<SearchByName />} />
+        <Route path="/book/search/:name" element={<SearchByName />} />
+
+
       </Routes>
       <Footer />
     </BrowserRouter>
@@ -25,3 +32,4 @@ function App() {
 }
 
 export default App;
+
