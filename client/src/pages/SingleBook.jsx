@@ -10,7 +10,7 @@ const SingleBook = () => {
   useEffect(() => {
     const fetchBook = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/book/getBook/${id}`);
+        const response = await fetch(`https://book-store-backend-2sci.onrender.com/book/getBook/${id}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }

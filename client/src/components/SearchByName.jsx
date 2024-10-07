@@ -11,7 +11,7 @@ const SearchByName = () => {
     const fetchBooks = async () => {
       if (name) {
         try {
-          const response = await axios.get(`http://localhost:8080/book/search/${name}`);
+          const response = await axios.get(`https://book-store-backend-2sci.onrender.com/book/search/${name}`);
           setBooks(response.data);
         } catch (error) {
           if (error.response && error.response.status === 404) {

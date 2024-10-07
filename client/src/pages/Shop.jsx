@@ -9,7 +9,7 @@ const Shop = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/book/all-books'); // Replace with your actual API endpoint
+        const response = await axios.get('https://book-store-backend-2sci.onrender.com/book/all-books'); // Replace with your actual API endpoint
         setBooks(response.data);
       } catch (error) {
         setError('Failed to fetch books');

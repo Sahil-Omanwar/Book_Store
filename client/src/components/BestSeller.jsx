@@ -7,7 +7,7 @@ const BestSeller = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:8080/book/all-books')
+    fetch('https://book-store-backend-2sci.onrender.com/book/all-books')
       .then(res => {
         if (!res.ok) {
           throw new Error('Network response was not ok');
