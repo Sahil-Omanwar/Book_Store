@@ -5,12 +5,12 @@ import allb from '../assets/allbook.jpg';
 const OurSelf = () => {
   return (
     <div className='bg-gradient-to-r from-blue-400/30 via-blue-500/30 to-blue-600/30 p-10'>
-      <div className='text-center mb-16'> {/* Increased the bottom margin */}
+      <div className='text-center mb-16'>
         <h1 className='text-4xl font-bold text-blue-800'>Who are we?</h1>
       </div>
-      <div className='grid grid-cols-2 gap-8'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
         <div className='flex justify-center items-center'>
-          <img src={allb} alt="Books" className='w-3/4 h-auto rounded-lg shadow-md' />
+          <img src={allb} alt="Books" className='w-full md:w-3/4 h-auto rounded-lg shadow-md' />
         </div>
         <div className='flex flex-col justify-center'>
           <h1 className='text-3xl font-semibold text-gray-800'>Find your Book</h1>

@@ -41,9 +41,9 @@ const Sell = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400 p-10 min-h-screen flex items-center justify-center">
-      <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
-        <h2 className="text-3xl font-bold text-blue-900 mb-6">Sell a Book</h2>
+    <div className="bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400 p-5 md:p-10 min-h-screen flex items-center justify-center">
+      <form onSubmit={handleSubmit} className="bg-white p-6 md:p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-6">Sell a Book</h2>
         <div className="mb-4">
           <label className="block text-gray-700 font-semibold mb-2">Book Name</label>
           <input

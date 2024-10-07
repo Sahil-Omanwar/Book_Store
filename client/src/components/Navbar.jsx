@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaBook } from 'react-icons/fa';
+import { FaBook, FaBars } from 'react-icons/fa';
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  
   const navItems = [
     { link: 'Home', path: '/home' },
     { link: 'About', path: '/about' },
@@ -11,17 +13,26 @@ const Navbar = () => {
     { link: 'Blog', path: '/blog' }
   ];
 
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <header>
-      <nav className='fixed top-0 left-0 w-full bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 p-5 flex justify-around items-center shadow-lg z-50'>
-        <a href="/home" className='text-white font-bold text-3xl flex items-center space-x-2 pr-20'>
-          <FaBook className='text-white text-4xl' />
+      <nav className='w-full bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 p-5 flex justify-between items-center shadow-lg z-50'>
+        <Link to="/home" className='text-white font-bold text-2xl flex items-center space-x-2'>
+          <FaBook className='text-white text-3xl' />
           <span>Book-Store</span>
-        </a>
-        <div className='flex space-x-14'>
+        </Link>
+        <div className='md:hidden'>
+          <button onClick={toggleMenu}>
+            <FaBars className='text-white text-2xl' />
+          </button>
+        </div>
+        <div className={`flex-col md:flex md:flex-row md:space-x-14 ${isOpen ? 'flex' : 'hidden'} md:block`}>
           {
             navItems.map((x, index) => (
-              <Link key={index} to={x.path} className='text-white text-xl font-semibold hover:text-gray-200 transition-colors duration-300'>
+              <Link key={index} to={x.path} className='text-white text-xl font-semibold hover:text-gray-200 transition-colors duration-300 mt-4 md:mt-0'>
                 {x.link}
               </Link>
             ))

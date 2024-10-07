@@ -5,7 +5,7 @@ import { FaInstagram, FaTwitter, FaGithub } from "react-icons/fa";
 const Footer = () => {
   return (
     <div className='bg-gray-800 text-white py-10'>
-      <div className='container mx-auto grid grid-cols-1 md:grid-cols-4 gap-10'>
+      <div className='container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10'>
         <div className='flex flex-col items-start pl-5'>
           <h1 className='text-2xl font-bold mb-2 '>Book-Store</h1>
           <p className='text-gray-400'>Your go-to place for searching books</p>
@@ -36,7 +36,7 @@ const Footer = () => {
       </div>
       <div className='text-center mt-8'>
         <p className='text-gray-400'>© 2024 Book-Store. All rights reserved.</p>
-        <p className='text-gray-400'>Made By:Sahil Omanwar</p>
+        <p className='text-gray-400'>Made By: Sahil Omanwar</p>
       </div>
     </div>
   );

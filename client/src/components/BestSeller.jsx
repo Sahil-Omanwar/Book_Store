@@ -24,11 +24,11 @@ const BestSeller = () => {
       });
   }, []);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  if (loading) return <p className="text-center text-blue-500">Loading...</p>;
+  if (error) return <p className="text-center text-red-500">Error: {error.message}</p>;
 
   return (
-    <div className="bg-gradient-to-r from-blue-400/30 via-blue-500/30 to-blue-600/30 p-10">
+    <div className="bg-gradient-to-r from-blue-400/30 via-blue-500/30 to-blue-600/30 p-4 sm:p-6 md:p-10">
       <BookCards books={books} headline="Best Seller Books" />
     </div>
   );

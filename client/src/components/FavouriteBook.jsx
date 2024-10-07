@@ -1,20 +1,21 @@
-import React from 'react'
-import harry from '../assets/harry.jpg'
-import manSearch from '../assets/mansearchfor.jpg'
-import psy from '../assets/psycologymoney.jpg'
-import kite from '../assets/thekiterunner.jpg'
-import thinkGrow from '../assets/tngr.jpg'
-import howtoWin from '../assets/download.png'
-import moking from '../assets/tokill.jpg'
-import world from '../assets/world.jpg'
+import React from 'react';
+import harry from '../assets/harry.jpg';
+import manSearch from '../assets/mansearchfor.jpg';
+import psy from '../assets/psycologymoney.jpg';
+import kite from '../assets/thekiterunner.jpg';
+import thinkGrow from '../assets/tngr.jpg';
+import howtoWin from '../assets/download.png';
+import moking from '../assets/tokill.jpg';
+import world from '../assets/world.jpg';
 
 const FavouriteBook = () => {
   return (
     <div className='bg-white p-6'>
-      <div className='text-center mb-16'> {/* Increased the bottom margin */}
+      <div className='text-center mb-16'>
         <h1 className='text-4xl font-bold text-blue-800'>Favourite Books</h1>
       </div>
-      <div className='grid grid-cols-4 gap-8'>
+      {/* Grid adjusted for responsiveness */}
+      <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8'>
         <div className='text-center'>
           <img src={harry} alt="Harry Potter" className='mx-auto h-48 w-32 object-cover' />
           <h2 className='mt-4 text-lg font-semibold text-gray-700'>Harry Potter</h2>
@@ -57,7 +58,7 @@ const FavouriteBook = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FavouriteBook
+export default FavouriteBook;
